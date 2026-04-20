@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const isLoggedIn = localStorage.getItem("user");
+  const user = localStorage.getItem("user");
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -16,7 +16,7 @@ function Navbar() {
       <Link to="/">Home</Link> | 
       <Link to="/search">Appointments</Link> | 
 
-      {!isLoggedIn ? (
+      {!user ? (
         <>
           <Link to="/login">Login</Link> | 
           <Link to="/">Sign Up</Link>

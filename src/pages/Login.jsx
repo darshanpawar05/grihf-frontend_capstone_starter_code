@@ -16,12 +16,10 @@ function Login() {
 
       const data = await res.json();
 
-      alert("Login Successful");
-      console.log(data);
-
       localStorage.setItem("user", JSON.stringify(data));
-    } catch (error) {
-      console.error(error);
+      alert("Login Successful");
+    } catch (err) {
+      console.log(err);
     }
   };
 
